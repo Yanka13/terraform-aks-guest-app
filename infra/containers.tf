@@ -1,6 +1,6 @@
 resource "azurerm_container_registry" "registry" {
   location            = var.location
-  name                = "${var.resource_group_name}AksTerraform"
+  name                = "${var.resource_group_name}aksterraform"
   resource_group_name = var.resource_group_name
   sku                 = "Basic"
   admin_enabled        = true
@@ -8,7 +8,7 @@ resource "azurerm_container_registry" "registry" {
 }
 
 resource "docker_image" "backend" {
-  name = "${var.resource_group_name}AksTerraform.azurecr.io/backend"
+  name = "${var.resource_group_name}aksterraform.azurecr.io/backend"
   build {
     context = "../dev/"
     tag     = ["latest"]
